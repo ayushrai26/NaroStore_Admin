@@ -8,7 +8,7 @@ const Orders = () => {
   
   const fetchOrders = async () => {
     try {
-      const res = await fetch("http://localhost:3000/admin/fetch-orders", {
+      const res = await fetch("https://narostore-backend.onrender.com/admin/fetch-orders", {
         credentials: "include",
       });
       const data = await res.json();
@@ -29,10 +29,10 @@ const Orders = () => {
     fetchOrders();
   }, []);
 
-  // ✅ Update Order Status
+  
   const updateStatus = async (orderId, newStatus) => {
     try {
-      const res = await fetch(`http://localhost:3000/admin/update-order/${orderId}`, {
+      const res = await fetch(`https://narostore-backend.onrender.com/admin/update-order/${orderId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -54,11 +54,11 @@ const Orders = () => {
     }
   };
 
-  // ✅ Delete Order
+  
   const deleteOrder = async (orderId) => {
     if (!window.confirm("Are you sure you want to delete this order?")) return;
     try {
-      const res = await fetch(`http://localhost:3000/admin/delete-order/${orderId}`, {
+      const res = await fetch(`https://narostore-backend.onrender.com/admin/delete-order/${orderId}`, {
         method: "DELETE",
         credentials: "include",
       });

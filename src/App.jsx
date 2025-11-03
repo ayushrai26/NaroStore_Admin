@@ -19,7 +19,7 @@ function App() {
   useEffect(()=>{
     const generateAccessToken = async()=>{
       try{
-    const response = await fetch('http://localhost:3000/admin/generate-access-token',{
+    const response = await fetch('https://narostore-backend.onrender.com/admin/generate-access-token',{
       credentials:'include'
     })
     if (response.ok) {
@@ -41,14 +41,14 @@ function App() {
    useEffect(() => {
     const interval = setInterval(async () => {
       try {
-        const res = await fetch("http://localhost:3000/admin/generate-access-token", {
+        const res = await fetch("https://narostore-backend.onrender.com/admin/generate-access-token", {
           method: "GET",
           credentials: "include",
         });
 
         if (res.ok) {
           const data = await res.json();
-          console.log("Access token auto-refreshed 🔁", data);
+          console.log("Access token auto-refreshed", data);
           setIsAuthenticated(true);
         } else {
           console.warn("Auto-refresh failed ❌, user might need to log in again.");
@@ -57,7 +57,7 @@ function App() {
       } catch (err) {
         console.error("Auto-refresh error:", err);
       }
-    }, 9 * 60 * 1000); // refresh every 9 minutes
+    }, 9 * 60 * 1000); 
 
     return () => clearInterval(interval);
   }, []);

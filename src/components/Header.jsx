@@ -8,7 +8,7 @@ const Header = () => {
   const [popup,setPopUp] = useState(false)
   const handleLogout = async () => {
   try {
-    const res = await fetch("http://localhost:3000/admin/logout", {
+    const res = await fetch("https://narostore-backend.onrender.com/admin/logout", {
       method: "POST",
       credentials: "include", 
     });

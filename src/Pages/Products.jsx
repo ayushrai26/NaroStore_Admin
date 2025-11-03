@@ -17,7 +17,7 @@ const Products = () => {
   
   const fetchProducts = async () => {
     try {
-      const res = await fetch("http://localhost:3000/products/fetch-all-products", {
+      const res = await fetch("https://narostore-backend.onrender.com/products/fetch-all-products", {
         credentials: "include",
       });
       const data = await res.json();
@@ -37,7 +37,7 @@ const Products = () => {
     const formData = new FormData();
     formData.append("image", file);
 
-    const res = await fetch("http://localhost:3000/api/upload/product-photos", {
+    const res = await fetch("https://narostore-backend.onrender.com/api/upload/product-photos", {
       method: "POST",
       credentials: "include",
       body: formData,
@@ -65,7 +65,7 @@ const Products = () => {
         uploadedImageUrl = await uploadImage(imageFile);
       }
      console.log(uploadedImageUrl,'image')
-      const res = await fetch("http://localhost:3000/products/create-product", {
+      const res = await fetch("https://narostore-backend.onrender.com/products/create-product", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -99,7 +99,7 @@ const Products = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this product?")) return;
     try {
-      const res = await fetch(`http://localhost:3000/products/delete-product/${id}`, {
+      const res = await fetch(`https://narostore-backend.onrender.com/products/delete-product/${id}`, {
         method: "DELETE",
         credentials: "include",
       });
@@ -118,7 +118,7 @@ const Products = () => {
     e.preventDefault();
     console.log(editingProduct)
     try {
-      const res = await fetch(`http://localhost:3000/products/edit-product/${editingProduct._id}`, {
+      const res = await fetch(`https://narostore-backend.onrender.com/products/edit-product/${editingProduct._id}`, {
         method: "PATCH",
         credentials: "include",
         headers: { "Content-Type": "application/json" },

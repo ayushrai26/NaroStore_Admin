@@ -20,7 +20,7 @@ const Login = () => {
     setLoading(true);
    console.log(formData)
     try {
-      const res = await fetch("http://localhost:3000/admin/sign-in-admin", {
+      const res = await fetch("https://narostore-backend.onrender.com/admin/sign-in-admin", {
         method: "POST",
         credentials: "include", 
         headers: {

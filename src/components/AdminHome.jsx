@@ -8,7 +8,7 @@ const AdminHome = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-100 via-white to-amber-50 flex flex-col items-center justify-center text-center px-6">
-      {/* Animated Logo and Heading */}
+    
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -27,7 +27,7 @@ const AdminHome = () => {
         </p>
       </motion.div>
 
-      {/* Action Button */}
+      
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -43,7 +43,7 @@ const AdminHome = () => {
         </button>
       </motion.div>
 
-      {/* Footer Section */}
+    
       <div className="absolute bottom-5 text-sm text-gray-500">
         © {new Date().getFullYear()} NaroStore | Admin Management Portal
       </div>

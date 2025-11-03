@@ -15,7 +15,7 @@ const DashboardCards = () => {
   const fetchUsers = async () => {
     try {
     
-      const response = await fetch("http://localhost:3000/admin/fetch-all-users", {
+      const response = await fetch("https://narostore-backend.onrender.com/admin/fetch-all-users", {
         credentials: "include",
       });
 
@@ -34,7 +34,7 @@ const DashboardCards = () => {
   };
   const fetchProducts = async () => {
     try {
-      const res = await fetch("http://localhost:3000/products/fetch-all-products", {
+      const res = await fetch("https://narostore-backend.onrender.com/products/fetch-all-products", {
         credentials: "include",
       });
       const data = await res.json();
@@ -46,7 +46,7 @@ const DashboardCards = () => {
   };
   const fetchOrders = async()=>{
     try{
-    const response = await fetch('http://localhost:3000/admin/fetch-orders',{
+    const response = await fetch('https://narostore-backend.onrender.com/admin/fetch-orders',{
       credentials:'include'
     })
     const data = await response.json()

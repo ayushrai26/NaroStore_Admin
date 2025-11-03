@@ -8,7 +8,7 @@ const Users = () => {
   const fetchUsers = async () => {
     try {
     
-      const response = await fetch("http://localhost:3000/admin/fetch-all-users", {
+      const response = await fetch("https://narostore-backend.onrender.com/admin/fetch-all-users", {
         credentials: "include",
       });
 
@@ -42,10 +42,7 @@ const Users = () => {
     <div>
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">User Management</h1>
-        {/* <button className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-          <UserPlus size={18} />
-          Add User
-        </button> */}
+        
       </div>
 
       <div className="bg-white p-6 rounded-lg shadow">
@@ -93,9 +90,7 @@ const Users = () => {
                 </td>
                 <td className="py-2 px-2 text-center">
                   <div className="flex justify-center gap-3">
-                    {/* <button className="text-blue-600 hover:text-blue-800">
-                      <Edit size={18} />
-                    </button> */}
+                    
                     <button
                       onClick={() => handleDelete(user._id)}
                       className="text-red-600 hover:text-red-800"
