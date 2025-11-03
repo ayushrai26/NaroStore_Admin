@@ -3,9 +3,11 @@ import { useContext ,useState} from "react";
 import AuthenticationContext from "../contextAPI/Authentication/createContext";
 import { RiLogoutCircleFill } from "react-icons/ri";
 import toast from "react-hot-toast";
+import {useNavigate} from 'react-router-dom'
 const Header = () => {
   const {isAuthenticated,setIsAuthenticated} = useContext(AuthenticationContext)
   const [popup,setPopUp] = useState(false)
+  const navigate = useNavigate()
   const handleLogout = async () => {
   try {
     const res = await fetch("https://narostore-backend.onrender.com/admin/logout", {
@@ -17,7 +19,7 @@ const Header = () => {
       console.log("Logged out successfully!");
       setIsAuthenticated(false)
       setPopUp(false)
-      window.location.href = '/login'
+      navigate('/login')
       toast.success('Admin Logout')
     }
   } catch (err) {
@@ -49,7 +51,7 @@ const Header = () => {
           </>):(<>
           
           <User className="text-gray-600" />
-          <button onClick={()=>window.location.href='/login'}>Login</button>
+          <button onClick={()=>navigate('/login')}>Login</button>
           </>)}
           
           
