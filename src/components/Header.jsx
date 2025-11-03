@@ -19,7 +19,7 @@ const Header = () => {
       console.log("Logged out successfully!");
       setIsAuthenticated(false)
       setPopUp(false)
-      navigate('/login')
+      navigate('/')
       toast.success('Admin Logout')
     }
   } catch (err) {
@@ -51,7 +51,7 @@ const Header = () => {
           </>):(<>
           
           <User className="text-gray-600" />
-          <button onClick={()=>navigate('/login')}>Login</button>
+          <button onClick={()=>navigate('/admin/login')}>Login</button>
           </>)}
           
           
